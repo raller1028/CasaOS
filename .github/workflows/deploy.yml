@@ -30,7 +30,7 @@ jobs:
       - name: Get version
         id: get_version
         # run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
-        run: echo ::set-output name=VERSION::v0.4.0
+        run: echo ::set-output name=v0.4.0
 
       -
         name: Set up Go
