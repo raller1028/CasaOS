@@ -3,8 +3,8 @@ package route
 import (
 	"os"
 
-	"github.com/raller1028/CasaOS-Common/middleware"
-	"github.com/raller1028/CasaOS-Common/utils/jwt"
+	"github.com/IceWhaleTech/CasaOS-Common/middleware"
+	"github.com/IceWhaleTech/CasaOS-Common/utils/jwt"
 	"github.com/raller1028/CasaOS/pkg/config"
 	v1 "github.com/raller1028/CasaOS/route/v1"
 

@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"time"
 
+	notifyCommon "github.com/IceWhaleTech/CasaOS-Common/model/notify"
 	"github.com/ambelovsky/gosf"
 	socketio "github.com/googollee/go-socket.io"
 	"github.com/gorilla/websocket"
-	notifyCommon "github.com/raller1028/CasaOS-Common/model/notify"
 	model2 "github.com/raller1028/CasaOS/model"
 	"github.com/raller1028/CasaOS/model/notify"
 	"github.com/raller1028/CasaOS/service/model"

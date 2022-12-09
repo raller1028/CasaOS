@@ -15,9 +15,9 @@ import (
 	"fmt"
 	"os"
 
-	interfaces "github.com/raller1028/CasaOS-Common"
-	"github.com/raller1028/CasaOS-Common/utils/systemctl"
-	"github.com/raller1028/CasaOS-Gateway/common"
+	interfaces "github.com/IceWhaleTech/CasaOS-Common"
+	"github.com/IceWhaleTech/CasaOS-Common/utils/systemctl"
+	"github.com/IceWhaleTech/CasaOS-Gateway/common"
 	"github.com/raller1028/CasaOS/pkg/config"
 	"github.com/raller1028/CasaOS/pkg/sqlite"
 	"github.com/raller1028/CasaOS/service"
