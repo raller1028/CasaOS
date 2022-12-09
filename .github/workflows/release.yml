@@ -59,13 +59,13 @@ jobs:
           region: oss-cn-shanghai
           bucket: casaos
           assets: |
-            dist/checksums.txt:/IceWhaleTech/CasaOS/releases/download/${{ steps.get_version.outputs.VERSION }}/checksums.txt
-            dist/linux-arm-7-casaos-${{ steps.get_version.outputs.VERSION }}.tar.gz:/IceWhaleTech/CasaOS/releases/download/${{ steps.get_version.outputs.VERSION }}/linux-arm-7-casaos-${{ steps.get_version.outputs.VERSION }}.tar.gz
-            dist/linux-arm64-casaos-${{ steps.get_version.outputs.VERSION }}.tar.gz:/IceWhaleTech/CasaOS/releases/download/${{ steps.get_version.outputs.VERSION }}/linux-arm64-casaos-${{ steps.get_version.outputs.VERSION }}.tar.gz
-            dist/linux-amd64-casaos-${{ steps.get_version.outputs.VERSION }}.tar.gz:/IceWhaleTech/CasaOS/releases/download/${{ steps.get_version.outputs.VERSION }}/linux-amd64-casaos-${{ steps.get_version.outputs.VERSION }}.tar.gz
-            dist/linux-arm-7-casaos-migration-tool-${{ steps.get_version.outputs.VERSION }}.tar.gz:/IceWhaleTech/CasaOS/releases/download/${{ steps.get_version.outputs.VERSION }}/linux-arm-7-casaos-migration-tool-${{ steps.get_version.outputs.VERSION }}.tar.gz
-            dist/linux-arm64-casaos-migration-tool-${{ steps.get_version.outputs.VERSION }}.tar.gz:/IceWhaleTech/CasaOS/releases/download/${{ steps.get_version.outputs.VERSION }}/linux-arm64-casaos-migration-tool-${{ steps.get_version.outputs.VERSION }}.tar.gz
-            dist/linux-amd64-casaos-migration-tool-${{ steps.get_version.outputs.VERSION }}.tar.gz:/IceWhaleTech/CasaOS/releases/download/${{ steps.get_version.outputs.VERSION }}/linux-amd64-casaos-migration-tool-${{ steps.get_version.outputs.VERSION }}.tar.gz
+            dist/checksums.txt:/raller1028/CasaOS/releases/download/${{ steps.get_version.outputs.VERSION }}/checksums.txt
+            dist/linux-arm-7-casaos-${{ steps.get_version.outputs.VERSION }}.tar.gz:/raller1028/CasaOS/releases/download/${{ steps.get_version.outputs.VERSION }}/linux-arm-7-casaos-${{ steps.get_version.outputs.VERSION }}.tar.gz
+            dist/linux-arm64-casaos-${{ steps.get_version.outputs.VERSION }}.tar.gz:/raller1028/CasaOS/releases/download/${{ steps.get_version.outputs.VERSION }}/linux-arm64-casaos-${{ steps.get_version.outputs.VERSION }}.tar.gz
+            dist/linux-amd64-casaos-${{ steps.get_version.outputs.VERSION }}.tar.gz:/raller1028/CasaOS/releases/download/${{ steps.get_version.outputs.VERSION }}/linux-amd64-casaos-${{ steps.get_version.outputs.VERSION }}.tar.gz
+            dist/linux-arm-7-casaos-migration-tool-${{ steps.get_version.outputs.VERSION }}.tar.gz:/raller1028/CasaOS/releases/download/${{ steps.get_version.outputs.VERSION }}/linux-arm-7-casaos-migration-tool-${{ steps.get_version.outputs.VERSION }}.tar.gz
+            dist/linux-arm64-casaos-migration-tool-${{ steps.get_version.outputs.VERSION }}.tar.gz:/raller1028/CasaOS/releases/download/${{ steps.get_version.outputs.VERSION }}/linux-arm64-casaos-migration-tool-${{ steps.get_version.outputs.VERSION }}.tar.gz
+            dist/linux-amd64-casaos-migration-tool-${{ steps.get_version.outputs.VERSION }}.tar.gz:/raller1028/CasaOS/releases/download/${{ steps.get_version.outputs.VERSION }}/linux-amd64-casaos-migration-tool-${{ steps.get_version.outputs.VERSION }}.tar.gz
 
 
 

@@ -4,9 +4,9 @@ import (
 	json2 "encoding/json"
 	"time"
 
-	"github.com/IceWhaleTech/CasaOS/model"
-	"github.com/IceWhaleTech/CasaOS/pkg/config"
-	"github.com/IceWhaleTech/CasaOS/pkg/utils/httper"
+	"github.com/raller1028/CasaOS/model"
+	"github.com/raller1028/CasaOS/pkg/config"
+	"github.com/raller1028/CasaOS/pkg/utils/httper"
 	"github.com/tidwall/gjson"
 )
 

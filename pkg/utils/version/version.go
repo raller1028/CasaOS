@@ -14,8 +14,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/IceWhaleTech/CasaOS/model"
-	"github.com/IceWhaleTech/CasaOS/types"
+	"github.com/raller1028/CasaOS/model"
+	"github.com/raller1028/CasaOS/types"
 )
 
 func IsNeedUpdate(version model.Version) (bool, model.Version) {

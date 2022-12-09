@@ -11,8 +11,8 @@
 package main
 
 import (
-	interfaces "github.com/IceWhaleTech/CasaOS-Common"
-	"github.com/IceWhaleTech/CasaOS-Common/utils/version"
+	interfaces "github.com/raller1028/CasaOS-Common"
+	"github.com/raller1028/CasaOS-Common/utils/version"
 )
 
 type migrationTool struct{}

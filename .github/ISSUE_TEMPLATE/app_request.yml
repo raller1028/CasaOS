@@ -7,9 +7,9 @@ body:
     attributes:
       value: |
         ### ❤ Thanks for taking the time to fill out this app request!
-        > Before proceeding, please make sure that this app is not in App Store and no one has [requested](https://github.com/IceWhaleTech/CasaOS/labels/App%20Request) the same app before.
+        > Before proceeding, please make sure that this app is not in App Store and no one has [requested](https://github.com/raller1028/CasaOS/labels/App%20Request) the same app before.
         > If you have already requested the app, please ask your friends to help add a 👍 to this issue. Then be patient and wait for the developers to work on it.
-        > If you have any questions, please ask them on [Discord](https://discord.gg/knqAbbBbeX) or [Github Discussions](https://github.com/IceWhaleTech/CasaOS/discussions).
+        > If you have any questions, please ask them on [Discord](https://discord.gg/knqAbbBbeX) or [Github Discussions](https://github.com/raller1028/CasaOS/discussions).
 
   - type: textarea
     id: app-info

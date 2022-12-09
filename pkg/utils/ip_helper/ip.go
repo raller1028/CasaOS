@@ -4,7 +4,7 @@ import (
 	"net"
 	"strings"
 
-	httper2 "github.com/IceWhaleTech/CasaOS/pkg/utils/httper"
+	httper2 "github.com/raller1028/CasaOS/pkg/utils/httper"
 )
 
 func IsIPv4(address string) bool {
@@ -14,17 +14,17 @@ func IsIPv6(address string) bool {
 	return strings.Count(address, ":") >= 2
 }
 
-//获取外网ip
+// 获取外网ip
 func GetExternalIPV4() string {
 	return httper2.Get("https://api.ipify.org", nil)
 }
 
-//获取外网ip
+// 获取外网ip
 func GetExternalIPV6() string {
 	return httper2.Get("https://api6.ipify.org", nil)
 }
 
-//获取本地ip
+// 获取本地ip
 func GetLoclIp() string {
 	addrs, err := net.InterfaceAddrs()
 	if err != nil {

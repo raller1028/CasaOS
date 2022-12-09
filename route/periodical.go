@@ -18,8 +18,8 @@ import (
 	"time"
 	"unsafe"
 
-	"github.com/IceWhaleTech/CasaOS/model"
-	"github.com/IceWhaleTech/CasaOS/service"
+	"github.com/raller1028/CasaOS/model"
+	"github.com/raller1028/CasaOS/service"
 )
 
 func SendNetINfoBySocket() {

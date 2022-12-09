@@ -20,7 +20,7 @@ jobs:
         uses: actions/add-to-project@v0.3.0
         with:
           github-token: ${{ steps.generate_token.outputs.token }}
-          project-url: https://github.com/orgs/IceWhaleTech/projects/5
+          project-url: https://github.com/orgs/raller1028/projects/5
           labeled: alpha, bug
           label-operator: AND
           
@@ -28,6 +28,6 @@ jobs:
         uses: actions/add-to-project@v0.3.0
         with:
           github-token: ${{ steps.generate_token.outputs.token }}
-          project-url: https://github.com/orgs/IceWhaleTech/projects/8
+          project-url: https://github.com/orgs/raller1028/projects/8
           labeled: "App Request"
           label-operator: AND

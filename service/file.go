@@ -19,9 +19,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/IceWhaleTech/CasaOS-Common/utils/logger"
-	"github.com/IceWhaleTech/CasaOS/model"
-	"github.com/IceWhaleTech/CasaOS/pkg/utils/file"
+	"github.com/raller1028/CasaOS-Common/utils/logger"
+	"github.com/raller1028/CasaOS/model"
+	"github.com/raller1028/CasaOS/pkg/utils/file"
 	"go.uber.org/zap"
 )
 

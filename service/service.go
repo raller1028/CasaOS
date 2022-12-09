@@ -11,9 +11,9 @@
 package service
 
 import (
-	"github.com/IceWhaleTech/CasaOS-Common/external"
 	"github.com/gorilla/websocket"
 	"github.com/patrickmn/go-cache"
+	"github.com/raller1028/CasaOS-Common/external"
 	"gorm.io/gorm"
 )
 

@@ -35,9 +35,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- [System] Re-instate default zone0 for CPU Temp ([#694](https://github.com/IceWhaleTech/CasaOS/issues/694))
-- [Disk] Fixed storage name with extra `-1` after rebooting ([#698](https://github.com/IceWhaleTech/CasaOS/issues/698))
-- [Disk] Fixed disk check so it does not impact disk going into idle ([#704](https://github.com/IceWhaleTech/CasaOS/issues/704))
+- [System] Re-instate default zone0 for CPU Temp ([#694](https://github.com/raller1028/CasaOS/issues/694))
+- [Disk] Fixed storage name with extra `-1` after rebooting ([#698](https://github.com/raller1028/CasaOS/issues/698))
+- [Disk] Fixed disk check so it does not impact disk going into idle ([#704](https://github.com/raller1028/CasaOS/issues/704))
 
 ## [0.3.8] 2022-11-21
 
@@ -49,14 +49,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [System] Improve the feedback function, you can submit feedback in the bottom right corner of WebUI.
 
 ### Fixed
-- [System] Fix CPU Temp for other platforms ([#661](https://github.com/IceWhaleTech/CasaOS/issues/661))
+- [System] Fix CPU Temp for other platforms ([#661](https://github.com/raller1028/CasaOS/issues/661))
 
 ## [0.3.7.1] 2022-11-04
 
 ### Fixed
 
-- Fix memory leak issue ([#658](https://github.com/IceWhaleTech/CasaOS/issues/658)[#646](https://github.com/IceWhaleTech/CasaOS/issues/646))
-- Solve the problem of local application import failure ([#490](https://github.com/IceWhaleTech/CasaOS/issues/490))
+- Fix memory leak issue ([#658](https://github.com/raller1028/CasaOS/issues/658)[#646](https://github.com/raller1028/CasaOS/issues/646))
+- Solve the problem of local application import failure ([#490](https://github.com/raller1028/CasaOS/issues/490))
 
 ## [0.3.7] 2022-10-28
 
@@ -92,7 +92,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [Apps] Custom links can be added to Apps section
 
 ### Fixed
-- [Apps] Fixed the problem of not being able to modify some App settings ([#510](https://github.com/IceWhaleTech/CasaOS/issues/510))
+- [Apps] Fixed the problem of not being able to modify some App settings ([#510](https://github.com/raller1028/CasaOS/issues/510))
 
 ### Changed
 - [System] Architecture optimization. Improved performance.
@@ -111,18 +111,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- [App] fixed uninstalling imported docker container apps results in wiping ALL your config data from them ([#360](https://github.com/IceWhaleTech/CasaOS/issues/360))
+- [App] fixed uninstalling imported docker container apps results in wiping ALL your config data from them ([#360](https://github.com/raller1028/CasaOS/issues/360))
 
 ## [0.3.4] - 2022-07-29(UTC)
 
 ### Added
 
-- SSH adds port-side options and prompts for connection status. ([#286](https://github.com/IceWhaleTech/CasaOS/issues/286))
+- SSH adds port-side options and prompts for connection status. ([#286](https://github.com/raller1028/CasaOS/issues/286))
 
 ### Changed
 
 - Normalize all routes
-- Application names now support spaces ([#211](https://github.com/IceWhaleTech/CasaOS/issues/211))
+- Application names now support spaces ([#211](https://github.com/raller1028/CasaOS/issues/211))
 
 ### Removed
 
@@ -134,14 +134,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fixed storage format and remove password error issues ([#344](https://github.com/IceWhaleTech/CasaOS/issues/344) [#357](https://github.com/IceWhaleTech/CasaOS/issues/357))
+- Fixed storage format and remove password error issues ([#344](https://github.com/raller1028/CasaOS/issues/344) [#357](https://github.com/raller1028/CasaOS/issues/357))
 
 ## [0.3.3] - 2022-07-08(UTC)
 
 ### Added
 
 - [System]Add interface call log
-- Adding Developing file ([#311](https://github.com/IceWhaleTech/CasaOS/pull/311))
+- Adding Developing file ([#311](https://github.com/raller1028/CasaOS/pull/311))
 - [App] add new tips for app section.
 - [System] UI Configurable function modules: support turning off the search bar and recommended apps module in the settings.
 - [System] Custom wallpapers: two new preset wallpapers, support for custom uploads, support for setting images from Files as wallpapers, Also support right click on dashboard to change wallpaper.
@@ -164,9 +164,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- [Disk] Fixed hard drive won't hibernate problem ([#202](https://github.com/IceWhaleTech/CasaOS/issues/202))
-- [File] Fixed the backspace key that causes the folder to rewind ([#252](https://github.com/IceWhaleTech/CasaOS/issues/252))
-- [App] Fixed app logo is not loading when imported. ([#320](https://github.com/IceWhaleTech/CasaOS/issues/320))
+- [Disk] Fixed hard drive won't hibernate problem ([#202](https://github.com/raller1028/CasaOS/issues/202))
+- [File] Fixed the backspace key that causes the folder to rewind ([#252](https://github.com/raller1028/CasaOS/issues/252))
+- [App] Fixed app logo is not loading when imported. ([#320](https://github.com/raller1028/CasaOS/issues/320))
 
 ## [0.3.2.1] - 2022-06-16(UTC)
 
@@ -177,26 +177,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - [System] Fixed the issue of widgets displaying wrongly on mobile devices.
-- [App] Fix the problem of application opening failure on non-80 ports ([#283](https://github.com/IceWhaleTech/CasaOS/issues/283) [#280](https://github.com/IceWhaleTech/CasaOS/issues/280))
-- [System] Modify port failure problem ([#282](https://github.com/IceWhaleTech/CasaOS/issues/282))
-- [App]Modify environment variables disappearing problem([#284](https://github.com/IceWhaleTech/CasaOS/issues/284))
-- [System]Fix no update alert([#278](https://github.com/IceWhaleTech/CasaOS/issues/278))
-- [System] Fixed some bugs of application cpu usage and memory staging([#272](https://github.com/IceWhaleTech/CasaOS/issues/272))
-- [App] Fixed plex and HA network mode error issues ([#299](https://github.com/IceWhaleTech/CasaOS/issues/299))
-- [App] Fix application terminal not working ([#266](https://github.com/IceWhaleTech/CasaOS/issues/266))
+- [App] Fix the problem of application opening failure on non-80 ports ([#283](https://github.com/raller1028/CasaOS/issues/283) [#280](https://github.com/raller1028/CasaOS/issues/280))
+- [System] Modify port failure problem ([#282](https://github.com/raller1028/CasaOS/issues/282))
+- [App]Modify environment variables disappearing problem([#284](https://github.com/raller1028/CasaOS/issues/284))
+- [System]Fix no update alert([#278](https://github.com/raller1028/CasaOS/issues/278))
+- [System] Fixed some bugs of application cpu usage and memory staging([#272](https://github.com/raller1028/CasaOS/issues/272))
+- [App] Fixed plex and HA network mode error issues ([#299](https://github.com/raller1028/CasaOS/issues/299))
+- [App] Fix application terminal not working ([#266](https://github.com/raller1028/CasaOS/issues/266))
 
 ## [0.3.2] - 2022-06-10
 
 ### Added
 
 - [Files] Files can now be selected multiple files and downloaded, deleted, moved, etc.
-- [Apps] Support to modify the application opening address.([#204](https://github.com/IceWhaleTech/CasaOS/issues/204))
+- [Apps] Support to modify the application opening address.([#204](https://github.com/raller1028/CasaOS/issues/204))
 
 ### Changed
 
-- [Apps] Hide the display of non-essential environment variables in the application.([#196](https://github.com/IceWhaleTech/CasaOS/issues/196))
+- [Apps] Hide the display of non-essential environment variables in the application.([#196](https://github.com/raller1028/CasaOS/issues/196))
 - [System] Network, disk, cpu, memory, etc. information is modified to be pushed via socket.
-- [System] Optimize opening speed.([#214](https://github.com/IceWhaleTech/CasaOS/issues/214))
+- [System] Optimize opening speed.([#214](https://github.com/raller1028/CasaOS/issues/214))
 - [Language] Update language pack [zarevskaya](https://github.com/zarevskaya) [patrickhilker](https://github.com/patrickhilker)
 - [System] Interface path adjustment
 
@@ -206,11 +206,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- [System] Fixed the problem that sync data cannot submit the device ID ([#68](https://github.com/IceWhaleTech/CasaOS/issues/68))
-- [Files] Fixed the code editor center alignment display problem.([#210](https://github.com/IceWhaleTech/CasaOS/issues/210))
-- [Files] Fixed the problem of wrong name when downloading files.([#240](https://github.com/IceWhaleTech/CasaOS/issues/240))
-- [System] Fixed the network display as a negative number problem.([#224](https://github.com/IceWhaleTech/CasaOS/issues/224))
-- [System] Fixed the problem of wireless network card traffic display.([#222](https://github.com/IceWhaleTech/CasaOS/issues/222))
+- [System] Fixed the problem that sync data cannot submit the device ID ([#68](https://github.com/raller1028/CasaOS/issues/68))
+- [Files] Fixed the code editor center alignment display problem.([#210](https://github.com/raller1028/CasaOS/issues/210))
+- [Files] Fixed the problem of wrong name when downloading files.([#240](https://github.com/raller1028/CasaOS/issues/240))
+- [System] Fixed the network display as a negative number problem.([#224](https://github.com/raller1028/CasaOS/issues/224))
+- [System] Fixed the problem of wireless network card traffic display.([#222](https://github.com/raller1028/CasaOS/issues/222))
 
 
 ## [0.3.1.1] - 2022-05-17

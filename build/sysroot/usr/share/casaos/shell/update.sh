@@ -9,4 +9,4 @@
 ### 
 
 
-curl -fsSL https://raw.githubusercontent.com/IceWhaleTech/get/main/update.sh | bash
+curl -fsSL https://raw.githubusercontent.com/raller1028/get/main/update.sh | bash

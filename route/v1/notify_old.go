@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/IceWhaleTech/CasaOS/service"
-	"github.com/IceWhaleTech/CasaOS/types"
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
+	"github.com/raller1028/CasaOS/service"
+	"github.com/raller1028/CasaOS/types"
 )
 
 var upGrader = websocket.Upgrader{

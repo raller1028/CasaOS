@@ -19,8 +19,8 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/IceWhaleTech/CasaOS/model"
 	"github.com/go-ini/ini"
+	"github.com/raller1028/CasaOS/model"
 )
 
 // 系统配置

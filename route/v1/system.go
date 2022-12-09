@@ -12,16 +12,16 @@ import (
 	"time"
 	"unsafe"
 
-	http2 "github.com/IceWhaleTech/CasaOS-Common/utils/http"
-	"github.com/IceWhaleTech/CasaOS-Common/utils/port"
-	"github.com/IceWhaleTech/CasaOS/model"
-	"github.com/IceWhaleTech/CasaOS/pkg/config"
-	"github.com/IceWhaleTech/CasaOS/pkg/utils/common_err"
-	"github.com/IceWhaleTech/CasaOS/pkg/utils/version"
-	"github.com/IceWhaleTech/CasaOS/service"
-	model2 "github.com/IceWhaleTech/CasaOS/service/model"
-	"github.com/IceWhaleTech/CasaOS/types"
 	"github.com/gin-gonic/gin"
+	http2 "github.com/raller1028/CasaOS-Common/utils/http"
+	"github.com/raller1028/CasaOS-Common/utils/port"
+	"github.com/raller1028/CasaOS/model"
+	"github.com/raller1028/CasaOS/pkg/config"
+	"github.com/raller1028/CasaOS/pkg/utils/common_err"
+	"github.com/raller1028/CasaOS/pkg/utils/version"
+	"github.com/raller1028/CasaOS/service"
+	model2 "github.com/raller1028/CasaOS/service/model"
+	"github.com/raller1028/CasaOS/types"
 )
 
 // @Summary check version

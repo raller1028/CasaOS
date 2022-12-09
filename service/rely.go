@@ -11,7 +11,7 @@
 package service
 
 import (
-	model2 "github.com/IceWhaleTech/CasaOS/service/model"
+	model2 "github.com/raller1028/CasaOS/service/model"
 	"gorm.io/gorm"
 )
 
@@ -31,7 +31,7 @@ func (r *relyService) Create(rely model2.RelyDBModel) {
 
 }
 
-//获取我的应用列表
+// 获取我的应用列表
 func (r *relyService) GetInfo(id string) model2.RelyDBModel {
 	var m model2.RelyDBModel
 	r.db.Where("custom_id = ?", id).First(&m)
