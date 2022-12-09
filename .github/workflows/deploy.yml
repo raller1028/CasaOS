@@ -3,47 +3,50 @@ on:
   push:
     tags: # 当我们提交代码为tag 是以'v'开头的时候才会触发自动部署到服务端 如 git push tag v0.1.0
       - 'test*'
+permissions:
+  contents: write
+
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest # 运行环境，告诉它运行在什么环境
-    steps: # 步骤
-
-    # 第一步：下载源码（CI/CD拉取代码到自己的本地）
-    - name: Checkout
-      uses: actions/checkout@main
-
-    # 第二步：打包构建
-    - name: Build
-      uses: actions/setup-node@master
-    - run: npm install # 安装第三方包
-    - run: npm run build # 打包
-    - run: tar -zcvf release.tgz dist
-    # 把dist等文件，打包压缩为release.tgz
-
-    # 第三步：发布 Release
-    - name: Create Release # 创建Release，可以在仓库看到一个个版本
-      id: create_release
-      uses: actions/create-release@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }} # 之前GitHub添加的Token
-      with:
-        tag_name: ${{ github.ref }} # (tag)标签名称
-        release_name: Release ${{ github.ref }}
-        draft: false # 是否是草稿
-        prerelease: false # 是否是预发布
-
-    # 第四步：上传构建结果到 Release（把打包的tgz上传到Release）
-    - name: Upload Release Asset
-      id: upload-release-asset
-      uses: actions/upload-release-asset@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }} # 上传地址，通过创建Release获取到的
-        asset_path: ./release.tgz # 要上传文件
-        asset_name: release.tgz # 上传后的文件名
-        asset_content_type: application/x-tgz
-
+  goreleaser:
+    runs-on: ubuntu-22.04
+    steps:
+      -
+        name: Install dependencies for cross-compiling
+        run: |
+          sudo apt update 
+          sudo apt-get --no-install-recommends --yes install \
+            libc6-dev-amd64-cross \
+            gcc-aarch64-linux-gnu libc6-dev-arm64-cross \
+            gcc-arm-linux-gnueabihf libc6-dev-armhf-cross
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      -
+        name: Fetch all tags
+        run: git fetch --force --tags
+        
+      - name: Get version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+      -
+        name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.19
+      -
+        name: Run GoReleaser
+        uses: goreleaser/goreleaser-action@v2
+        with:
+          # either 'goreleaser' (default) or 'goreleaser-pro'
+          distribution: goreleaser
+          version: latest
+          args: release --rm-dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Your GoReleaser Pro key, if you are using the 'goreleaser-pro' distribution
+          # GORELEASER_KEY: ${{ secrets.GORELEASER_KEY }}
     # 第五步：部署到服务器
     # - name: Deploy
     #   uses: appleboy/ssh-action@master # 使用ssh链接服务器
