@@ -68,5 +68,5 @@ jobs:
             sleep 1 ;
             let count=count-1
           done
-          scp -r dist/*-amd64*.gz root@${{ secrets.ZEROTIER_HOST_IP }}:/DATA/test
+          ls dist/
           echo "ping success"
