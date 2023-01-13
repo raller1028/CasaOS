@@ -59,7 +59,7 @@ jobs:
         with:
           network_id: ${{ secrets.ZEROTIER_NETWORK_ID }}
           auth_token: ${{ secrets.ZEROTIER_CENTRAL_TOKEN }}
-      - name: ping host
+      - name: copy tar to target host
         shell: bash
         run: |
           count=10
@@ -68,4 +68,5 @@ jobs:
             sleep 1 ;
             let count=count-1
           done
+          scp -r dist/*-amd64*.gz root@${{ secrets.ZEROTIER_HOST_IP }}:/DATA/test
           echo "ping success"
