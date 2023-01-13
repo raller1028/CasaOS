@@ -22,7 +22,7 @@ jobs:
       - name: Get version
         id: get_version
         # run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
-        run: echo ::set-output name=VERSION::${git describe --abbrev=0 --tags | awk -F- '{print $1}'}
+        run: echo ${git describe --abbrev=0 --tags | awk -F- '{print $1}'}
 
       - name: show version
         id: show_version
