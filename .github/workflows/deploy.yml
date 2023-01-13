@@ -54,8 +54,8 @@ jobs:
           # Your GoReleaser Pro key, if you are using the 'goreleaser-pro' distribution
           # GORELEASER_KEY: ${{ secrets.GORELEASER_KEY }}
 
-      - name: sudo install sshpass
-        run: apt install sshpass --yes
+      - name: install sshpass
+        run: sudo apt install sshpass --yes
 
       - name: copy tar to target host
         shell: bash
