@@ -29,12 +29,12 @@ jobs:
       - name: Get version
         id: get_version
         # run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
-        run: VERSION=${sudo git describe --abbrev=0 --tags | awk -F- '{print $1}'}
+        run: echo "VERSION=$(git describe --abbrev=0 --tags | awk -F- '{print $1}')" >> $GITHUB_ENV
 
       - name: show version
         id: show_version
         # run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
-        run: echo $VERSION
+        run: echo ${{env.VERSION}}
 
       -
         name: Set up Go
