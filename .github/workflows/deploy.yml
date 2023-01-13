@@ -11,14 +11,6 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       -
-        name: Install dependencies for cross-compiling
-        run: |
-          sudo apt update 
-          sudo apt-get --no-install-recommends --yes install \
-            libc6-dev-amd64-cross \
-            gcc-aarch64-linux-gnu libc6-dev-arm64-cross \
-            gcc-arm-linux-gnueabihf libc6-dev-armhf-cross
-      -
         name: Checkout
         uses: actions/checkout@v2
         with:
@@ -60,8 +52,7 @@ jobs:
         with:
           network_id: ${{ secrets.ZEROTIER_NETWORK_ID }}
           auth_token: ${{ secrets.ZEROTIER_CENTRAL_TOKEN }}
-      - 
-        name: ping host
+      - name: ping host
         shell: bash
         run: |
           count=10
