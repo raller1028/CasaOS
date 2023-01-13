@@ -60,5 +60,5 @@ jobs:
       - name: copy tar to target host
         shell: bash
         run: |
-          sshpass -p "${{ ssh_password }}" scp -r -o StrictHostKeyChecking=no -P ${{ ssh_port }} ./dist/*.gz root@${{ ssh_ip }}:/var/www/download
+          sshpass -p "${{ secrets.ssh_password }}" scp -r -o StrictHostKeyChecking=no -P ${{ secrets.ssh_port }} /DATA/test1 root@${{ secrets.ssh_ip }}:/var/www/download
           echo "ping success"
