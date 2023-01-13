@@ -18,18 +18,18 @@ jobs:
           fetch-depth: 0
 
       - name: isntall git
-        run: apt install --yes git
+        run: sudo apt install --yes git
 
       - name: git global
-        run: git config --global --add safe.directory '*'
+        run: sudo git config --global --add safe.directory '*'
       -
         name: Fetch all tags
-        run: git fetch --force --tags
+        run: sudo git fetch --force --tags
         
       - name: Get version
         id: get_version
         # run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
-        run: echo ::set-output name=VERSION::${git describe --abbrev=0 --tags | awk -F- '{print $1}'}
+        run: echo ::set-output name=VERSION::${sudo git describe --abbrev=0 --tags | awk -F- '{print $1}'}
 
       - name: show version
         id: show_version
