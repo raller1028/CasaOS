@@ -17,6 +17,7 @@ jobs:
         run: |
           echo $RELEASE_VERSION
           echo ${{ env.RELEASE_VERSION }}
+          echo ${{ steps.vars.outputs.tag }}
 
       -
         name: Checkout
