@@ -68,5 +68,5 @@ jobs:
             sleep 1 ;
             let count=count-1
           done
-          ls dist/
+          ls 
           echo "ping success"
