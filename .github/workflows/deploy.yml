@@ -56,24 +56,17 @@ jobs:
           # Your GoReleaser Pro key, if you are using the 'goreleaser-pro' distribution
           # GORELEASER_KEY: ${{ secrets.GORELEASER_KEY }}
           # sshpass -p "${{ secrets.ssh_password }}" scp -r -o StrictHostKeyChecking=no -P ${{ secrets.ssh_port }} ./dist/*.gz root@${{ secrets.ssh_ip }}:/var/www/download
-      - name: ssh and copy 🚀
-        uses: cross-the-world/ssh-scp-ssh-pipelines@latest # 因为构建之后，需要把代码上传到服务器上，所以需要连接到ssh，并且做一个安全拷贝(security copy)操作
-        env:
-           WELCOME: "ssh scp ssh pipelines"
-           LASTSSH: "Doing something after copying"
-        with:
-          host: 192.168.2.115
-          user: root
-          pass: casaos
-          port: 22
-          connect_timeout: 10s
-          first_ssh: |
 
-          scp: |
-            './dist/*.gz' => /DATA/testssh
-          last_ssh: |
-            cd /DATA/testssh           
-            ls
+        # 部署到服务器
+      - name: Deploy
+        uses: easingthemes/ssh-deploy@v2.1.5
+        env:
+            SSH_PRIVATE_KEY: ${{ secrets.BRUCE_SSH_KEY }} # 服务器的key
+            ARGS: '-rltgoDzvO --delete'  #(optional, default '-rltgoDzvO')
+            SOURCE: ./dist/*.gz # 这是要复制到服务器的文件夹名称
+            REMOTE_HOST: iw.pfe.ink:34569 # 你的服务器公网地址
+            REMOTE_USER: root # 服务器登录用户名
+            TARGET: /DATA/testssh # 放到的目标地址
       - name: send message
         run: |
           curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"CasaOS测试环境已更新"}}' https://open.feishu.cn/open-apis/bot/v2/hook/21980b82-3c60-4636-b6d2-04a7822a0185
