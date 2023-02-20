@@ -48,7 +48,7 @@ jobs:
         env:
             SSH_PRIVATE_KEY: ${{ secrets.BRUCE_SSH_KEY }}
             SOURCE: ./*.tar
-            REMOTE_HOST: 'iw.pfe.ink'
+            REMOTE_HOST: '139.226.59.39'
             REMOTE_USER: root
             REMOTE_PORT: 34569
             TARGET: /DATA/testssh
