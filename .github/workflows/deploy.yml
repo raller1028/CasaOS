@@ -47,11 +47,11 @@ jobs:
         uses: easingthemes/ssh-deploy@v2.1.5
         env:
             SSH_PRIVATE_KEY: ${{ secrets.BRUCE_SSH_KEY }}
-            SOURCE: './*.tar'
+            SOURCE: ./*.tar
             REMOTE_HOST: 'iw.pfe.ink'
             REMOTE_USER: root
-            REMOTE_PORT: '34569'
-            TARGET: '/DATA/testssh' 
+            REMOTE_PORT: 34569
+            TARGET: /DATA/testssh
       - name: send message
         run: |
           curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"CasaOS测试环境已更新"}}' https://open.feishu.cn/open-apis/bot/v2/hook/21980b82-3c60-4636-b6d2-04a7822a0185
