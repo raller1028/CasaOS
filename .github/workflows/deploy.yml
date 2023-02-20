@@ -21,7 +21,9 @@ jobs:
         run: sudo apt install --yes git
 
       - name: git global
-        run: sudo git config --global --add safe.directory '*'
+        run: |
+          sudo git config --global --add safe.directory '*'
+          sudo git tag v999.999.999-alpha
       -
         name: Fetch all tags
         run: sudo git fetch --force --tags
@@ -48,20 +50,30 @@ jobs:
           # either 'goreleaser' (default) or 'goreleaser-pro'
           distribution: goreleaser
           version: latest
-          args: release --rm-dist
+          args: release --rm-dist --snapshot
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           # Your GoReleaser Pro key, if you are using the 'goreleaser-pro' distribution
           # GORELEASER_KEY: ${{ secrets.GORELEASER_KEY }}
+          # sshpass -p "${{ secrets.ssh_password }}" scp -r -o StrictHostKeyChecking=no -P ${{ secrets.ssh_port }} ./dist/*.gz root@${{ secrets.ssh_ip }}:/var/www/download
+      - name: ssh and copy 🚀
+        uses: cross-the-world/ssh-scp-ssh-pipelines@latest # 因为构建之后，需要把代码上传到服务器上，所以需要连接到ssh，并且做一个安全拷贝(security copy)操作
+        env:
+           WELCOME: "ssh scp ssh pipelines"
+           LASTSSH: "Doing something after copying"
+        with:
+          host: 192.168.2.115
+          user: root
+          pass: casaos
+          port: 22
+          connect_timeout: 10s
+          first_ssh: |
 
-      - name: install sshpass
-        run: sudo apt install sshpass --yes
-
-      - name: copy tar to target host
-        shell: bash
-        run: |
-          sshpass -p "${{ secrets.ssh_password }}" scp -r -o StrictHostKeyChecking=no -P ${{ secrets.ssh_port }} ./dist/*.gz root@${{ secrets.ssh_ip }}:/var/www/download
-          echo "ping success"
+          scp: |
+            './dist/*.gz' => /DATA/testssh
+          last_ssh: |
+            cd /DATA/testssh           
+            ls
       - name: send message
         run: |
-          curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"CasaOS测试环境已更新"}}'  https://open.feishu.cn/open-apis/bot/v2/hook/eb8f45c7-9636-4b64-84f2-a66d9aeb9d30
+          curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"CasaOS测试环境已更新"}}' https://open.feishu.cn/open-apis/bot/v2/hook/21980b82-3c60-4636-b6d2-04a7822a0185
