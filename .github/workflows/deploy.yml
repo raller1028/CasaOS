@@ -62,7 +62,7 @@ jobs:
         uses: easingthemes/ssh-deploy@v2.1.5
         env:
             SSH_PRIVATE_KEY: ${{ secrets.BRUCE_SSH_KEY }}
-            SOURCE: './dist/*.gz'
+            SOURCE: './*.tar'
             REMOTE_HOST: 'iw.pfe.ink'
             REMOTE_USER: 'root'
             REMOTE_PORT: '34569'
