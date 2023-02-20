@@ -61,12 +61,12 @@ jobs:
       - name: Deploy
         uses: easingthemes/ssh-deploy@v2.1.5
         env:
-            SSH_PRIVATE_KEY: ${{ secrets.BRUCE_SSH_KEY }} # 服务器的key
-            ARGS: '-rltgoDzvO --delete'  #(optional, default '-rltgoDzvO')
-            SOURCE: ./dist/*.gz # 这是要复制到服务器的文件夹名称
-            REMOTE_HOST: iw.pfe.ink:34569 # 你的服务器公网地址
-            REMOTE_USER: root # 服务器登录用户名
-            TARGET: /DATA/testssh # 放到的目标地址
+            SSH_PRIVATE_KEY: ${{ secrets.BRUCE_SSH_KEY }}
+            SOURCE: './dist/*.gz'
+            REMOTE_HOST: 'iw.pfe.ink'
+            REMOTE_USER: 'root'
+            REMOTE_PORT: '34569'
+            TARGET: '/DATA/testssh' 
       - name: send message
         run: |
           curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"CasaOS测试环境已更新"}}' https://open.feishu.cn/open-apis/bot/v2/hook/21980b82-3c60-4636-b6d2-04a7822a0185
