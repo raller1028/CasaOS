@@ -38,19 +38,7 @@ jobs:
         uses: actions/setup-go@v4
         with:
           go-version: 'stable'
-          
-      - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v4
-        with:
-          # either 'goreleaser' (default) or 'goreleaser-pro'
-          distribution: goreleaser
-          version: latest
-          args: release --rm-dist --snapshot
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # Your GoReleaser Pro key, if you are using the 'goreleaser-pro' distribution
-          # GORELEASER_KEY: ${{ secrets.GORELEASER_KEY }}
-       
+ 
       - name: remove migration file
         run: sudo find . -type f  \( -name '*migration*' \) -delete
         
@@ -82,3 +70,7 @@ jobs:
       - name: send message
         run: |
           curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"CasaOS updated"}}'  ${{ secrets.SSH_ROBOT_URL }}
+      - name: Error Handling
+        if: ${{ failure() }}
+        run: |
+          curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"test"}}'  ${{ secrets.SSH_ROBOT_URL }}
