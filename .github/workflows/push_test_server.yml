@@ -24,24 +24,6 @@ jobs:
       - name: Fetch all tags
         run: sudo git fetch --force --tags
         
-      - name: Get version
-        id: get_version
-        # run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
-        run: echo "VERSION=$(git describe --abbrev=0 --tags | awk -F- '{print $1}')" >> $GITHUB_ENV
-        
-      - name: show version
-        id: show_version
-        # run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
-        run: echo ${{env.VERSION}}
-        
-      - name: Set up Go
-        uses: actions/setup-go@v4
-        with:
-          go-version: 'stable'
- 
-      - name: remove migration file
-        run: sudo find . -type f  \( -name '*migration*' \) -delete
-        
       - name: install sshpass
         run: sudo apt install sshpass --yes
         
@@ -73,4 +55,4 @@ jobs:
       - name: Error Handling
         if: ${{ failure() }}
         run: |
-          curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"test"}}'  ${{ secrets.SSH_ROBOT_URL }}
+          curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"test"}}' https://open.feishu.cn/open-apis/bot/v2/hook/eb8f45c7-9636-4b64-84f2-a66d9aeb9d30
