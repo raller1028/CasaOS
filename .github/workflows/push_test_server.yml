@@ -43,15 +43,9 @@ jobs:
             let count=count-1
           done
           echo "ping success"
-
-      - name: copy tar to target host
-        shell: bash
-        run: |
-          sshpass -p "${{ secrets.ssh_password }}" scp -r -o StrictHostKeyChecking=no -P 22 ./dist/*.gz root@10.147.18.11:/var/www/download
-          echo "ping success"
       - name: send message
         run: |
-          curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"CasaOS updated"}}'  ${{ secrets.SSH_ROBOT_URL }}
+          curl -X POST -H "Content-Type: application/json" -d '{"msg_type":"text","content":{"text":"CasaOS updated"}}'  https://open.feishu.cn/open-apis/bot/v2/hook/eb8f45c7-9636-4b64-84f2-a66d9aeb9d30
       - name: Error Handling
         if: ${{ failure() }}
         run: |
